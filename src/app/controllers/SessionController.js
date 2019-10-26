@@ -11,7 +11,7 @@ class SessionController {
       password: yup.string().required(),
     });
 
-    if (!(await schema.isValid({ emai, password }))) {
+    if (!(await schema.isValid({ email, password }))) {
       return res.status(400).json({ error: 'validation fails' });
     }
 
