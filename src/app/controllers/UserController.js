@@ -11,7 +11,7 @@ class UserController {
       email: yup.string().email().required(),
     });
 
-    if (!schema.isValid(data)) {
+    if (!(await schema.isValid(data))) {
       return res.status(400).json({ error: 'validation fails' });
     }
 
