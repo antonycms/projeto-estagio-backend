@@ -1,0 +1,20 @@
+{
+  "name": "projeto-estagio-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "author": "Antony <antonyc828@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv-save": "^1.2.0",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
