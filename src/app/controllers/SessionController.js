@@ -20,7 +20,7 @@ class SessionController {
     });
 
     if (!user) {
-      return req.status(401).json({ error: 'user not found' });
+      return res.status(401).json({ error: 'user not found' });
     }
 
     if (!(await user.checkPassword(password))) {
@@ -30,6 +30,7 @@ class SessionController {
     const { id, name } = user;
 
     return res.json({
+      userId: id,
       token: jwt.sign({ id, name }, process.env.SECRET_KEY, { expiresIn: '1d' }),
     });
   }
