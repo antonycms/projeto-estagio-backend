@@ -30,7 +30,7 @@ class SessionController {
     const { id, name } = user;
 
     return res.json({
-      userId: id,
+      username: name,
       token: jwt.sign({ id, name }, process.env.SECRET_KEY, { expiresIn: '1d' }),
     });
   }

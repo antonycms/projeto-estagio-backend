@@ -11,6 +11,7 @@ router.post('/sessions', SessionController.store);
 
 router.use(auth);
 
+router.get('/', (req, res) => res.json({ tokenIsValid: true }));
 router.post('/cities', CityController.store);
 router.put('/cities', CityController.update);
 router.get('/cities', CityController.index);
