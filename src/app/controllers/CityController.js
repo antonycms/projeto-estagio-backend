@@ -14,6 +14,16 @@ class CityController {
       return res.status(400).json({ error: 'validation fails' });
     }
 
+    const cityExist = await City.findOne({
+      where: {
+        name: data.name,
+      }
+    });
+
+    if (cityExist) {
+      return res.status(400).json({ error: 'city has already been saved' })
+    }
+
     const city = await City.create(data);
 
     const { name, state } = city;
